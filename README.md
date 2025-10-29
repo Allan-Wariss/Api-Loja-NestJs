@@ -13,10 +13,6 @@ Este repositório contém projetos, exercícios e exemplos práticos desenvolvid
 - **Node.js** - Runtime JavaScript
 - **Express** - HTTP server framework
 
-## 📂 Estrutura do Projeto
-
----
-
 ## ⚙️ Inicialização
 
 Siga os passos abaixo para instalar as dependências e iniciar a aplicação.
@@ -47,3 +43,9 @@ Primeiro gere o build e depois suba o servidor de produção:
 npm run build
 npm run start:prod
 ```
+
+### 5) Documentação da API (Swagger)
+
+Após iniciar a aplicação, acesse:
+
+- http://localhost:3000/api
