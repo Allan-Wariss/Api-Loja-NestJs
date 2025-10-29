@@ -4,7 +4,7 @@ Um repositório dedicado ao aprendizado e prática do framework **NestJS**.
 
 ## 🎯 Objetivo
 
-Este repositório contém projetos, exercícios e exemplos práticos desenvolvidos durante o estudo do NestJS, um framework Node.js progressivo para construção de aplicações server-side eficientes e escaláveis.
+Este repositório contém projetos, exercícios e exemplos práticos desenvolvidos durante o meu estudo de NestJS.
 
 ## 🚀 Tecnologias
 
@@ -43,9 +43,3 @@ Primeiro gere o build e depois suba o servidor de produção:
 npm run build
 npm run start:prod
 ```
-
-### 5) Documentação da API (Swagger)
-
-Após iniciar a aplicação, acesse:
-
-- http://localhost:3000/api
