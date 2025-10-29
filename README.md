@@ -13,9 +13,6 @@ Este repositório contém projetos, exercícios e exemplos práticos desenvolvid
 - **Node.js** - Runtime JavaScript
 - **Express** - HTTP server framework
 
-## 📂 Estrutura do Projeto
-
----
 
 ## ⚙️ Inicialização
 
@@ -47,4 +44,5 @@ Primeiro gere o build e depois suba o servidor de produção:
 npm run build
 npm run start:prod
 ```
+
 
