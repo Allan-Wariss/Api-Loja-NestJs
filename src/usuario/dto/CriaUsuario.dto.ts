@@ -1,5 +1,6 @@
 import { IsEmail, IsNotEmpty, IsString, MinLength } from "class-validator";
 import { ApiProperty } from "@nestjs/swagger";
+import { EmailUnico } from "../validacao/emailUnico.validator";
 
 export class CriaUsuarioDTO {
 
@@ -10,6 +11,7 @@ export class CriaUsuarioDTO {
 
     @ApiProperty({ description: 'Email do usuário', example: 'maria@example.com', format: 'email' })
     @IsEmail(undefined, {message:"Email invalido"})
+    @EmailUnico({message: "Já existe um usuario com este email!"})
     email: string;
     
     @ApiProperty({ description: 'Senha de acesso (mín. 6 caracteres)', minLength: 6, example: 'segredo123' })
