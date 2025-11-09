@@ -18,7 +18,7 @@ export class CriaProdutoDTO {
     @ApiProperty({ description: 'Preço do produto', example: 299.9, minimum: 0.01, type: Number })
     @IsNumber({ allowNaN: false, allowInfinity: false }, { message: "preco deve ser número" })
     @IsPositive({ message: "preco deve ser maior que zero" })
-    preco: number;
+    valor: number;
 
     @ApiProperty({ description: 'Quantidade em estoque', example: 10, minimum: 0, type: Number })
     @IsInt({ message: "quantidade deve ser inteiro" })

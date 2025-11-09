@@ -1,4 +1,4 @@
-import { ConfigurableModuleBuilder, Module } from '@nestjs/common';
+import { Module } from '@nestjs/common';
 import { usuarioModule } from './usuario/usuario.module';
 import { produtoModule } from './produto/produto.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -12,8 +12,8 @@ import { ConfigModule } from '@nestjs/config';
       isGlobal: true
     }),
     TypeOrmModule.forRootAsync({
+      imports: [ConfigModule],
       useClass: PostgresConfigService,
-      inject: [PostgresConfigService]
     })
   ],
 })

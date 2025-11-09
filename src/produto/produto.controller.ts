@@ -25,13 +25,13 @@ export class ProdutoController {
         produtoEntity.id = uuid();
         produtoEntity.nome = dadosDoProduto.nome;
         produtoEntity.descricao = dadosDoProduto.descricao;
-        produtoEntity.preco = dadosDoProduto.preco;
+        produtoEntity.valor = dadosDoProduto.valor;
         produtoEntity.quantidade = dadosDoProduto.quantidade;
 
         await this.produtoRepository.salvar(produtoEntity);
 
         return {
-            produto: new ListaProdutoDTO(produtoEntity.id, produtoEntity.nome, produtoEntity.preco),
+            produto: new ListaProdutoDTO(produtoEntity.id, produtoEntity.nome, produtoEntity.valor),
             menssage: 'Produto criado com sucesso',
         };
     }
@@ -41,7 +41,7 @@ export class ProdutoController {
     async listaProdutos() {
         const produtosSalvos = await this.produtoRepository.listar();
         return produtosSalvos.map(
-            (produto) => new ListaProdutoDTO(produto.id, produto.nome, produto.preco)
+            (produto) => new ListaProdutoDTO(produto.id, produto.nome, produto.valor)
         );
     }
 
