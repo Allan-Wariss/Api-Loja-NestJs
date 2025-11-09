@@ -27,6 +27,7 @@ describe('App e2e', () => {
       descricao: 'Descricao teste',
       valor: 10.5,
       quantidade: 5,
+      usuarioId: 'test-user-id',
     };
 
     const response = await request(app.getHttpServer())

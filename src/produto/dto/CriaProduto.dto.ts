@@ -10,6 +10,16 @@ export class CriaProdutoDTO {
     @NomeProdutoUnico({ message: "Já existe um produto com este nome!" })
     nome: string;
 
+    @ApiProperty({ description: 'Usuario Id', example: 'UUID' })
+    @IsString({ message: "usuarioId tem que ser string" })
+    @IsNotEmpty({ message: "usuarioId não pode ser vazia" })
+    usuarioId: string;
+
+    
+    @ApiProperty({ description: 'Categoria', example: 'skate' })
+    @IsString({ message: "usuarioId tem que ser string" })
+    categoria: string;
+
     @ApiProperty({ description: 'Descrição do produto', example: 'Teclado mecânico com switches azuis' })
     @IsString({ message: "descricao tem que ser string" })
     @IsNotEmpty({ message: "descricao não pode ser vazia" })

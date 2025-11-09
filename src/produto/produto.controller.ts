@@ -6,6 +6,7 @@ import { ProdutoEntity } from "./produto.entity";
 import { v4 as uuid } from "uuid";
 import { ListaProdutoDTO } from "./dto/ListaProduto.dto";
 import { AtualizaProdutoDTO } from "./dto/AtualizaProduto.dto";
+import { randomUUID } from "crypto";
 
 @ApiTags('produtos')
 @Controller('/produtos')
@@ -22,11 +23,13 @@ export class ProdutoController {
     async criaProduto(@Body() dadosDoProduto: CriaProdutoDTO) {
         const produtoEntity = new ProdutoEntity();
 
-        produtoEntity.id = uuid();
+        produtoEntity.id = randomUUID();
         produtoEntity.nome = dadosDoProduto.nome;
+        produtoEntity.usuarioId = dadosDoProduto.usuarioId;
         produtoEntity.descricao = dadosDoProduto.descricao;
         produtoEntity.valor = dadosDoProduto.valor;
         produtoEntity.quantidade = dadosDoProduto.quantidade;
+        produtoEntity.categoria = dadosDoProduto.categoria;
 
         await this.produtoRepository.salvar(produtoEntity);
 
